@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+.env
+.venv
+env/
+venv/
+.streamlit/
+*.joblib
+*.pkl
+*.bin
+*.pth
+*.h5
+*.onnx
+.DS_Store
+
+# Production blocks for heavy files
+Data/
+data/
+models/
+logs/
+*.zip
+*.safetensors
+*.csv
