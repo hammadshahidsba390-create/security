@@ -38,9 +38,11 @@ class GuardAILSTM(nn.Module):
 
 @st.cache_resource
 def load_network_model():
-    scaler_path   = 'model/network/guardai_scaler.pkl'
-    features_path = 'model/network/guardai_scaler_features.pkl'
-    model_path    = 'model/network/guardai_lstm_model.pth'
+    from pathlib import Path
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    scaler_path   = str(BASE_DIR / 'model/network/guardai_scaler.pkl')
+    features_path = str(BASE_DIR / 'model/network/guardai_scaler_features.pkl')
+    model_path    = str(BASE_DIR / 'model/network/guardai_lstm_model.pth')
     if not all(os.path.exists(p) for p in [scaler_path, features_path, model_path]):
         return None, None, None
     scaler   = joblib.load(scaler_path)
